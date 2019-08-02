@@ -1,4 +1,4 @@
-# Universal Web Application
+# Universal Web Application.
 
 A User Content Management System with Administrative functionality.
 
