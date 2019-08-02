@@ -1,7 +1,6 @@
-const pkg = require('./package')
+import pkg from "./package";
 
-
-module.exports = {
+export default {
   mode: 'universal',
 
   /*
@@ -15,7 +14,9 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' },
+      { rel: 'stylesheet', href: 'https://pro.fontawesome.com/releases/v5.9.0/css/all.css' }
     ]
   },
 
@@ -34,6 +35,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '@plugins/vuetify'
   ],
 
   /*
@@ -58,7 +60,7 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-      
+
     }
   }
-}
+};
