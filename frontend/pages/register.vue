@@ -20,22 +20,22 @@
                                 label="Name"
                                 type="text"
                                 append-icon="fal fa-user-alt"
-                                v-model="form.name"
+                                v-model.trim="form.name"
                             />
                             <v-text-field
                                 label="Email"
                                 type="email"
                                 append-icon="fal fa-mail-bulk"
-                                v-model="form.email"
+                                v-model.trim="form.email"
                             />
                             <v-text-field
                                 label="Password"
                                 type="password"
                                 append-icon="fal fa-key"
-                                v-model="form.password"
+                                v-model.trim="form.password"
                             />
 
-                            <v-btn block color="primary" class="mt-2">Register</v-btn>
+                            <v-btn block color="primary" class="mt-2" @click="register">Register</v-btn>
 
                         </v-form>
                     </v-card-text>
@@ -64,6 +64,22 @@ export default {
             }
         }
     },
+
+    methods: {
+        async register() {
+            // register user
+            await this.$axios.$post('register', this.form);
+            // login the registered user
+            await this.$auth.loginWith('local', {
+                data: {
+                    email: this.form.email,
+                    password: this.form.password
+                }
+            });
+            // redirect to the home page
+            this.$router.push('/')
+        }
+    }
 }
 </script>
 
