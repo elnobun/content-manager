@@ -20,16 +20,16 @@
                                 label="Email"
                                 type="email"
                                 append-icon="fal fa-mail-bulk"
-                                v-model="form.email"
+                                v-model.trim="form.email"
                             />
                             <v-text-field
                                 label="Password"
                                 type="password"
                                 append-icon="fal fa-key"
-                                v-model="form.password"
+                                v-model.trim="form.password"
                             />
 
-                            <v-btn block color="primary" class="mt-2">Login</v-btn>
+                            <v-btn block color="primary" class="mt-2" @click="login">Login</v-btn>
 
                         </v-form>
                     </v-card-text>
@@ -57,6 +57,15 @@ export default {
             }
         }
     },
+
+    methods: {
+        async login() {
+            await this.$auth.loginWith("local", {
+                data: this.form
+            });
+            this.$router.push('/')
+        }
+    }
 }
 </script>
 
