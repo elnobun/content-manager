@@ -34,11 +34,21 @@ export default {
     css: [],
 
     /*
+    ** Global Middleware
+    */
+    router: {
+        middleware: ["clearValidationErrors"]
+    },
+
+    /*
     ** Plugins to load before mounting the App
     */
     plugins: [
         '@plugins/vuetify',
-        '@plugins/mixins/user'
+        '@plugins/mixins/user',
+        '@plugins/axios',
+        '@plugins/mixins/validation',
+
     ],
 
     /*

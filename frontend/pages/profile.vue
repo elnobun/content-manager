@@ -1,16 +1,15 @@
 <template>
     <v-container>
-        Home Page
+        <h2>Profile Page</h2>
     </v-container>
 </template>
 
 <script>
-
 export default {
-    // middleware: ['auth']
+    name: "profile"
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>

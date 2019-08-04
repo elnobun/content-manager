@@ -20,7 +20,7 @@
                 </v-btn>
             </template>
             <template v-else>
-                <v-btn text>
+                <v-btn text nuxt to="/profile" >
                     <v-icon class="fad fa-user-circle mr-4" left/>
                     {{ user.name }}
                 </v-btn>
