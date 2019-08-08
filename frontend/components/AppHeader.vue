@@ -3,7 +3,7 @@
 
         <v-toolbar-title>Content Manager</v-toolbar-title>
         <v-btn text fab small nuxt to="/" class="ml-3">
-            <v-icon class="fas fa-home"/>
+            <v-icon class="fad fa-home-lg-alt"/>
         </v-btn>
 
         <v-spacer></v-spacer>
@@ -20,9 +20,19 @@
                 </v-btn>
             </template>
             <template v-else>
-                <v-btn text nuxt to="/profile" >
-                    <v-icon class="fad fa-user-circle mr-4" left/>
-                    {{ user.name }}
+                <v-btn text nuxt to="/dashboard" >
+                    <v-icon class="fad fa-file-plus" left/>
+                    Create
+                </v-btn>
+
+                <v-btn text nuxt to="/topics">
+                    <v-icon class="fad fa-list-ul" left/>
+                    Topics
+                </v-btn>
+
+                <v-btn text>
+                    <v-icon class="fad fa-clipboard-list" left/>
+                    Posts
                 </v-btn>
 
                 <v-btn text @click="logout">

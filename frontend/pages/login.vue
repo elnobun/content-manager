@@ -34,7 +34,11 @@
                                 required
                             />
 
-                            <v-btn block :color="!this.valid ? 'red white--text' : 'primary'" class="mt-2" type="submit">Login</v-btn>
+                            <v-btn 
+                                block 
+                                :color="!this.valid ? 'red white--text' : 'primary'" 
+                                class="mt-2" 
+                                type="submit">Login</v-btn>
 
                         </v-form>
                     </v-card-text>
@@ -73,7 +77,7 @@ export default {
                         data: this.form
                     });
                     this.$router.push({
-                        path: this.$route.query.redirect || '/profile'
+                        path: this.$route.query.redirect || '/'
                     })
                 } catch (e) {
                     return e.response.data.errors

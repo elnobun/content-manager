@@ -88,7 +88,7 @@ export default {
                     });
                     // redirect to the home page
                     this.$router.push({
-                        path: this.$route.query.redirect || '/profile'
+                        path: this.$route.query.redirect || '/dashboard'
                     })
                 } catch (e) {
                     return e.response.data.errors
